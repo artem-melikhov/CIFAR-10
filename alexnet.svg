@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2096" height="560" viewBox="0 0 2096 560">
+<defs><marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 8 4 L 0 8 z" fill="#5D748A"/></marker></defs>
+<rect width="100%" height="100%" fill="#F7F9FC"/>
+<text x="40" y="51" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#142C43">AlexNet для CIFAR-10</text>
+<text x="40" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" fill="#526A7F">Прямой проход слева направо · внутри блока операции выполняются сверху вниз · форма данных указана внизу</text>
+<rect x="40" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M56,133 H204 Q220,133 220,149 V193 H40 V149 Q40,133 56,133" fill="#EAF0F6"/>
+<text x="130.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#455F78">Вход</text>
+<text x="130.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">RGB-изображение</text>
+<text x="130.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">32 × 32</text>
+<rect x="50" y="397" width="160" height="51" rx="10" fill="#EAF0F6"/>
+<text x="130.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#455F78">Выход блока</text>
+<text x="130.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">3 × 32 × 32</text>
+<line x1="223" y1="297.0" x2="238" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="244" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M260,133 H408 Q424,133 424,149 V193 H244 V149 Q244,133 260,133" fill="#E0EEFC"/>
+<text x="334.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#1C639E">Блок 1</text>
+<text x="334.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">Conv 3→96</text>
+<text x="334.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">3×3 · s=1 · p=1</text>
+<text x="334.0" y="293" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ ReLU</text>
+<text x="334.0" y="323" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ LRN</text>
+<text x="334.0" y="353" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ MaxPool 3×3</text>
+<text x="334.0" y="383" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">s=2 · p=1</text>
+<rect x="254" y="397" width="160" height="51" rx="10" fill="#E0EEFC"/>
+<text x="334.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#1C639E">Выход блока</text>
+<text x="334.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">96 × 16 × 16</text>
+<line x1="427" y1="297.0" x2="442" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="448" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M464,133 H612 Q628,133 628,149 V193 H448 V149 Q448,133 464,133" fill="#E0EEFC"/>
+<text x="538.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#1C639E">Блок 2</text>
+<text x="538.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">Conv 96→256</text>
+<text x="538.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">5×5 · s=1 · p=2</text>
+<text x="538.0" y="293" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ ReLU</text>
+<text x="538.0" y="323" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ LRN</text>
+<text x="538.0" y="353" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ MaxPool 3×3</text>
+<text x="538.0" y="383" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">s=2 · p=1</text>
+<rect x="458" y="397" width="160" height="51" rx="10" fill="#E0EEFC"/>
+<text x="538.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#1C639E">Выход блока</text>
+<text x="538.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">256 × 8 × 8</text>
+<line x1="631" y1="297.0" x2="646" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="652" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M668,133 H816 Q832,133 832,149 V193 H652 V149 Q652,133 668,133" fill="#E0EEFC"/>
+<text x="742.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#1C639E">Блок 3</text>
+<text x="742.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">Conv 256→384</text>
+<text x="742.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">3×3 · s=1 · p=1</text>
+<text x="742.0" y="293" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ ReLU</text>
+<rect x="662" y="397" width="160" height="51" rx="10" fill="#E0EEFC"/>
+<text x="742.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#1C639E">Выход блока</text>
+<text x="742.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">384 × 8 × 8</text>
+<line x1="835" y1="297.0" x2="850" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="856" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M872,133 H1020 Q1036,133 1036,149 V193 H856 V149 Q856,133 872,133" fill="#E0EEFC"/>
+<text x="946.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#1C639E">Блок 4</text>
+<text x="946.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">Conv 384→384</text>
+<text x="946.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">3×3 · s=1 · p=1</text>
+<text x="946.0" y="293" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ ReLU</text>
+<rect x="866" y="397" width="160" height="51" rx="10" fill="#E0EEFC"/>
+<text x="946.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#1C639E">Выход блока</text>
+<text x="946.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">384 × 8 × 8</text>
+<line x1="1039" y1="297.0" x2="1054" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1060" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M1076,133 H1224 Q1240,133 1240,149 V193 H1060 V149 Q1060,133 1076,133" fill="#E0EEFC"/>
+<text x="1150.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#1C639E">Блок 5</text>
+<text x="1150.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">Conv 384→256</text>
+<text x="1150.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">3×3 · s=1 · p=1</text>
+<text x="1150.0" y="293" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ ReLU</text>
+<text x="1150.0" y="323" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ MaxPool 3×3</text>
+<text x="1150.0" y="353" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">s=2 · p=1</text>
+<rect x="1070" y="397" width="160" height="51" rx="10" fill="#E0EEFC"/>
+<text x="1150.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#1C639E">Выход блока</text>
+<text x="1150.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">256 × 4 × 4</text>
+<line x1="1243" y1="297.0" x2="1258" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1264" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M1280,133 H1428 Q1444,133 1444,149 V193 H1264 V149 Q1264,133 1280,133" fill="#EBEDF2"/>
+<text x="1354.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#596174">Flatten</text>
+<text x="1354.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">256 × 4 × 4</text>
+<text x="1354.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">→ вектор</text>
+<rect x="1274" y="397" width="160" height="51" rx="10" fill="#EBEDF2"/>
+<text x="1354.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#596174">Выход блока</text>
+<text x="1354.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">4096</text>
+<line x1="1447" y1="297.0" x2="1462" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1468" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M1484,133 H1632 Q1648,133 1648,149 V193 H1468 V149 Q1468,133 1484,133" fill="#FFE8E0"/>
+<text x="1558.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#AB4F38">Полносвязный 1</text>
+<text x="1558.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">Linear 4096→512</text>
+<text x="1558.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ ReLU</text>
+<text x="1558.0" y="293" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ Dropout p=0.5</text>
+<rect x="1478" y="397" width="160" height="51" rx="10" fill="#FFE8E0"/>
+<text x="1558.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#AB4F38">Выход блока</text>
+<text x="1558.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">512</text>
+<line x1="1651" y1="297.0" x2="1666" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1672" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M1688,133 H1836 Q1852,133 1852,149 V193 H1672 V149 Q1672,133 1688,133" fill="#FFE8E0"/>
+<text x="1762.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#AB4F38">Полносвязный 2</text>
+<text x="1762.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">Linear 512→256</text>
+<text x="1762.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ ReLU</text>
+<text x="1762.0" y="293" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">↓ Dropout p=0.5</text>
+<rect x="1682" y="397" width="160" height="51" rx="10" fill="#FFE8E0"/>
+<text x="1762.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#AB4F38">Выход блока</text>
+<text x="1762.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">256</text>
+<line x1="1855" y1="297.0" x2="1870" y2="297.0" stroke="#5D748A" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1876" y="133" width="180" height="328" rx="16" fill="white" stroke="#C8D5E2" stroke-width="2"/>
+<path d="M1892,133 H2040 Q2056,133 2056,149 V193 H1876 V149 Q1876,133 1892,133" fill="#DCF3E7"/>
+<text x="1966.0" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#187850">Выход</text>
+<text x="1966.0" y="233" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#18364F">Linear 256→10</text>
+<text x="1966.0" y="263" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">логиты</text>
+<text x="1966.0" y="293" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="400" fill="#344F66">без Softmax</text>
+<rect x="1886" y="397" width="160" height="51" rx="10" fill="#DCF3E7"/>
+<text x="1966.0" y="419" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#187850">Выход блока</text>
+<text x="1966.0" y="440" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#142C43">10 классов</text>
+<text x="40" y="516" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#49647B">Обозначения: s — stride, p — padding. Размеры до Flatten записаны как каналы × высота × ширина. Во всех свёртках groups=1.</text>
+</svg>
