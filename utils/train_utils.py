@@ -92,13 +92,33 @@ def train(model, optimizer, loss_func, dl_train, dl_val, path, device, EPOCH_COU
             # print(f'[epoch={epoch:3d}] train_loss={train_loss:.4f} val_loss={val_loss:.4f} train_acc={train_acc:.4f} val_acc={val_acc:.4f}')
             if plot:
                 plot_training(
-                            hist_train_loss, hist_val_loss,
-                            hist_train_acc, hist_val_acc,
-                            best_epoch, live=True
-                            )
+                    hist_train_loss,
+                    hist_val_loss,
+                    hist_train_acc,
+                    hist_val_acc,
+                    best_epoch, 
+                    live=True
+                )
 
     print(f'Best epoch = {best_epoch}, best val_acc = {best_val_accuracy:.4f}')
 
     return pd.DataFrame([best_val_accuracy, best_epoch])
-                
-        
+
+def test(model, dl_test, class_names, sample_path, output_path, device):
+    model.eval()
+    predicted_classes = []
+
+    with torch.inference_mode():
+        for batch_x in dl_test:
+            logits = model(batch_x.to(device))
+            class_indices = logits.argmax(dim=1).cpu().tolist()
+            predicted_classes.extend(class_names[i] for i in class_indices)
+
+    submission = pd.read_csv(sample_path)
+
+    if len(predicted_classes) != len(submission):
+        raise ValueError("Число предсказаний не совпадает с числом строк submission")
+
+    submission["label"] = predicted_classes
+    submission.to_csv(output_path, index=False)
+    return submission

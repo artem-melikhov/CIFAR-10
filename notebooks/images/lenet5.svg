@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="910" height="816" viewBox="0 0 910 816" role="img" aria-label="LeNet-5: вертикальная архитектура для входа 32×32">
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#111"/></marker>
+    <style>
+      text { font-family: 'DejaVu Sans', Arial, sans-serif; fill: #111; }
+      .title { font-size: 18px; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#fff"/>
+  <g transform="translate(30 26)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Input RGB: 3 × 32 × 32</text>
+    </g>
+<path d="M455 72V81" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 86)">
+      <rect width="850" height="44" fill="#8cf1f4" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Conv2d: kernel_size=5×5, stride=1, padding=0 → 6 × 28 × 28</text>
+    </g>
+<path d="M455 132V141" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 146)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Tanh</text>
+    </g>
+<path d="M455 192V201" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 206)">
+      <rect width="850" height="44" fill="#efc9f2" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">AvgPool2d: kernel_size=2×2, stride=2, padding=0 → 6 × 14 × 14</text>
+    </g>
+<path d="M455 252V261" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 266)">
+      <rect width="850" height="44" fill="#8cf1f4" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Conv2d: kernel_size=5×5, stride=1, padding=0 → 16 × 10 × 10</text>
+    </g>
+<path d="M455 312V321" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 326)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Tanh</text>
+    </g>
+<path d="M455 372V381" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 386)">
+      <rect width="850" height="44" fill="#efc9f2" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">AvgPool2d: kernel_size=2×2, stride=2, padding=0 → 16 × 5 × 5</text>
+    </g>
+<path d="M455 432V441" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 446)">
+      <rect width="850" height="44" fill="#8cf1f4" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Conv2d: kernel_size=5×5, stride=1, padding=0 → 120 × 1 × 1</text>
+    </g>
+<path d="M455 492V501" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 506)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Tanh</text>
+    </g>
+<path d="M455 552V561" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 566)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Flatten: 120 × 1 × 1 → 120</text>
+    </g>
+<path d="M455 612V621" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 626)">
+      <rect width="850" height="44" fill="#fff07a" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Linear: 120 → 84</text>
+    </g>
+<path d="M455 672V681" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 686)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Tanh</text>
+    </g>
+<path d="M455 732V741" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 746)">
+      <rect width="850" height="44" fill="#fff07a" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Linear: 84 → 10</text>
+    </g>
+</svg>
