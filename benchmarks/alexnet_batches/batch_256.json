@@ -1,0 +1,65 @@
+{
+  "batch_size": 256,
+  "status": "complete",
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_seconds": 44.42837204200623,
+      "val_seconds": 3.329634250003437,
+      "total_seconds": 47.75800629200967,
+      "train_images_per_second": 900.3255838899682,
+      "max_observed_driver_bytes": 3721494528,
+      "max_observed_tensor_bytes": 1060645888
+    },
+    {
+      "epoch": 2,
+      "train_seconds": 44.522363542004314,
+      "val_seconds": 3.3686402500024997,
+      "total_seconds": 47.89100379200681,
+      "train_images_per_second": 898.4248997082618,
+      "max_observed_driver_bytes": 3721494528,
+      "max_observed_tensor_bytes": 1060645888
+    },
+    {
+      "epoch": 3,
+      "train_seconds": 44.56336637499771,
+      "val_seconds": 3.3668809169976157,
+      "total_seconds": 47.93024729199533,
+      "train_images_per_second": 897.5982573534213,
+      "max_observed_driver_bytes": 3721494528,
+      "max_observed_tensor_bytes": 1060645888
+    }
+  ],
+  "torch": "2.14.1",
+  "torchvision": "0.29.1",
+  "workers": 4,
+  "seed": 52,
+  "repeats": 3,
+  "device": "mps",
+  "train_images": 40000,
+  "val_images": 10000,
+  "setup_seconds": 7.067061250003462,
+  "train_steps": 157,
+  "val_steps": 40,
+  "warmup": {
+    "epoch": 0,
+    "train_seconds": 50.677938791995985,
+    "val_seconds": 3.409032916999422,
+    "total_seconds": 54.08697170899541,
+    "train_images_per_second": 789.2980842053812,
+    "max_observed_driver_bytes": 2639331328,
+    "max_observed_tensor_bytes": 1061694464
+  },
+  "median_train_seconds": 44.522363542004314,
+  "median_val_seconds": 3.3668809169976157,
+  "median_total_seconds": 47.89100379200681,
+  "median_train_images_per_second": 898.4248997082618,
+  "max_observed_driver_bytes": 3721494528,
+  "max_observed_tensor_bytes": 1061694464,
+  "system_memory": {
+    "available_start_bytes": 5607194624,
+    "min_available_bytes": 2033139712,
+    "swap_start_bytes": 4457168896,
+    "max_swap_bytes": 4769185792
+  }
+}

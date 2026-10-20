@@ -37,8 +37,13 @@ def plot_training(
 
 def train(
     model, optimizer, loss_func, dl_train, dl_val, path, device,
-    EPOCH_COUNT=EPOCH_COUNT, plot=True, log_every=10, patience=50
+    EPOCH_COUNT=EPOCH_COUNT, plot=True, log_every=10, patience=50,
+    train_preprocess=None,
 ):
+    """train_preprocess обрабатывает только train после переноса батча на device.
+
+    dl_val должен выдавать уже подготовленные входы для модели.
+    """
 
     best_val_accuracy = -1
     best_epoch = -1
@@ -50,6 +55,8 @@ def train(
         train_loss_sum, train_n, train_correct, train_total = 0.0, 0, 0, 0
         for batch_x, batch_y in dl_train:
             batch_x, batch_y = batch_x.to(device), batch_y.to(device)
+            if train_preprocess is not None:
+                batch_x = train_preprocess(batch_x)
             y_pred = model(batch_x)
             loss = loss_func(y_pred, batch_y)
 
@@ -118,13 +125,20 @@ def train(
 
     return pd.DataFrame([best_val_accuracy, best_epoch])
 
-def test(model, dl_test, class_names, sample_path, output_path, device):
+def test(
+    model, dl_test, class_names, sample_path, output_path, device,
+    preprocess=None,
+):
+    """preprocess обрабатывает test после переноса батча на device."""
     model.eval()
     predicted_classes = []
 
     with torch.inference_mode():
         for batch_x in dl_test:
-            logits = model(batch_x.to(device))
+            batch_x = batch_x.to(device)
+            if preprocess is not None:
+                batch_x = preprocess(batch_x)
+            logits = model(batch_x)
             class_indices = logits.argmax(dim=1).cpu().tolist()
             predicted_classes.extend(class_names[i] for i in class_indices)
 

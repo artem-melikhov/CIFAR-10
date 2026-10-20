@@ -1,0 +1,223 @@
+{
+  "method": "separate fresh processes, one warmup and three measured full train+val epochs; actual notebook model, PNGs, Adam lr=3e-4, four persistent workers, no plots/checkpoints",
+  "results": [
+    {
+      "batch_size": 256,
+      "status": "complete",
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_seconds": 44.42837204200623,
+          "val_seconds": 3.329634250003437,
+          "total_seconds": 47.75800629200967,
+          "train_images_per_second": 900.3255838899682,
+          "max_observed_driver_bytes": 3721494528,
+          "max_observed_tensor_bytes": 1060645888
+        },
+        {
+          "epoch": 2,
+          "train_seconds": 44.522363542004314,
+          "val_seconds": 3.3686402500024997,
+          "total_seconds": 47.89100379200681,
+          "train_images_per_second": 898.4248997082618,
+          "max_observed_driver_bytes": 3721494528,
+          "max_observed_tensor_bytes": 1060645888
+        },
+        {
+          "epoch": 3,
+          "train_seconds": 44.56336637499771,
+          "val_seconds": 3.3668809169976157,
+          "total_seconds": 47.93024729199533,
+          "train_images_per_second": 897.5982573534213,
+          "max_observed_driver_bytes": 3721494528,
+          "max_observed_tensor_bytes": 1060645888
+        }
+      ],
+      "torch": "2.14.1",
+      "torchvision": "0.29.1",
+      "workers": 4,
+      "seed": 52,
+      "repeats": 3,
+      "device": "mps",
+      "train_images": 40000,
+      "val_images": 10000,
+      "setup_seconds": 7.067061250003462,
+      "train_steps": 157,
+      "val_steps": 40,
+      "warmup": {
+        "epoch": 0,
+        "train_seconds": 50.677938791995985,
+        "val_seconds": 3.409032916999422,
+        "total_seconds": 54.08697170899541,
+        "train_images_per_second": 789.2980842053812,
+        "max_observed_driver_bytes": 2639331328,
+        "max_observed_tensor_bytes": 1061694464
+      },
+      "median_train_seconds": 44.522363542004314,
+      "median_val_seconds": 3.3668809169976157,
+      "median_total_seconds": 47.89100379200681,
+      "median_train_images_per_second": 898.4248997082618,
+      "max_observed_driver_bytes": 3721494528,
+      "max_observed_tensor_bytes": 1061694464,
+      "system_memory": {
+        "available_start_bytes": 5607194624,
+        "min_available_bytes": 2033139712,
+        "swap_start_bytes": 4457168896,
+        "max_swap_bytes": 4769185792
+      }
+    },
+    {
+      "batch_size": 128,
+      "status": "complete",
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_seconds": 47.163189291997696,
+          "val_seconds": 3.4218643339991104,
+          "total_seconds": 50.58505362599681,
+          "train_images_per_second": 848.1190648993473,
+          "max_observed_driver_bytes": 2486272000,
+          "max_observed_tensor_bytes": 578027520
+        },
+        {
+          "epoch": 2,
+          "train_seconds": 46.21573708300275,
+          "val_seconds": 3.438966834000894,
+          "total_seconds": 49.654703917003644,
+          "train_images_per_second": 865.5060489062549,
+          "max_observed_driver_bytes": 2467397632,
+          "max_observed_tensor_bytes": 578027520
+        },
+        {
+          "epoch": 3,
+          "train_seconds": 46.6545616250005,
+          "val_seconds": 3.8348794170015026,
+          "total_seconds": 50.489441042002,
+          "train_images_per_second": 857.3652523307697,
+          "max_observed_driver_bytes": 2429648896,
+          "max_observed_tensor_bytes": 578027520
+        }
+      ],
+      "torch": "2.14.1",
+      "torchvision": "0.29.1",
+      "workers": 4,
+      "seed": 52,
+      "repeats": 3,
+      "device": "mps",
+      "train_images": 40000,
+      "val_images": 10000,
+      "setup_seconds": 6.562208291994466,
+      "train_steps": 313,
+      "val_steps": 79,
+      "warmup": {
+        "epoch": 0,
+        "train_seconds": 50.1947600420026,
+        "val_seconds": 3.484350540995365,
+        "total_seconds": 53.679110582997964,
+        "train_images_per_second": 796.8959303028503,
+        "max_observed_driver_bytes": 1347518464,
+        "max_observed_tensor_bytes": 578682880
+      },
+      "median_train_seconds": 46.6545616250005,
+      "median_val_seconds": 3.438966834000894,
+      "median_total_seconds": 50.489441042002,
+      "median_train_images_per_second": 857.3652523307697,
+      "max_observed_driver_bytes": 2486272000,
+      "max_observed_tensor_bytes": 578682880,
+      "system_memory": {
+        "available_start_bytes": 7230439424,
+        "min_available_bytes": 2880798720,
+        "swap_start_bytes": 4726390784,
+        "max_swap_bytes": 4726390784
+      }
+    },
+    {
+      "batch_size": 512,
+      "status": "complete",
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_seconds": 44.46114929200121,
+          "val_seconds": 3.3159713329951046,
+          "total_seconds": 47.777120624996314,
+          "train_images_per_second": 899.661853932242,
+          "max_observed_driver_bytes": 6252756992,
+          "max_observed_tensor_bytes": 2024834048
+        },
+        {
+          "epoch": 2,
+          "train_seconds": 43.85794408299989,
+          "val_seconds": 3.3156895840002107,
+          "total_seconds": 47.173633667000104,
+          "train_images_per_second": 912.0354552940547,
+          "max_observed_driver_bytes": 6252756992,
+          "max_observed_tensor_bytes": 2024834048
+        },
+        {
+          "epoch": 3,
+          "train_seconds": 44.404339500004426,
+          "val_seconds": 3.4256158329953905,
+          "total_seconds": 47.829955332999816,
+          "train_images_per_second": 900.812858617028,
+          "max_observed_driver_bytes": 6252756992,
+          "max_observed_tensor_bytes": 2024834048
+        }
+      ],
+      "torch": "2.14.1",
+      "torchvision": "0.29.1",
+      "workers": 4,
+      "seed": 52,
+      "repeats": 3,
+      "device": "mps",
+      "train_images": 40000,
+      "val_images": 10000,
+      "setup_seconds": 6.350092000000586,
+      "train_steps": 79,
+      "val_steps": 20,
+      "warmup": {
+        "epoch": 0,
+        "train_seconds": 46.30444600000192,
+        "val_seconds": 3.5166072089996305,
+        "total_seconds": 49.82105320900155,
+        "train_images_per_second": 863.8479337383357,
+        "max_observed_driver_bytes": 5178785792,
+        "max_observed_tensor_bytes": 2023916544
+      },
+      "median_train_seconds": 44.404339500004426,
+      "median_val_seconds": 3.3159713329951046,
+      "median_total_seconds": 47.777120624996314,
+      "median_train_images_per_second": 900.812858617028,
+      "max_observed_driver_bytes": 6252756992,
+      "max_observed_tensor_bytes": 2024834048,
+      "system_memory": {
+        "available_start_bytes": 7503265792,
+        "min_available_bytes": 1428979712,
+        "swap_start_bytes": 4684447744,
+        "max_swap_bytes": 6756696064
+      }
+    },
+    {
+      "batch_size": 1024,
+      "status": "memory_guard_abort",
+      "epochs": [],
+      "torch": "2.14.1",
+      "torchvision": "0.29.1",
+      "workers": 4,
+      "seed": 52,
+      "repeats": 3,
+      "device": "mps",
+      "train_images": 40000,
+      "val_images": 10000,
+      "setup_seconds": 6.2654865000004065,
+      "train_steps": 40,
+      "val_steps": 10,
+      "error": "system memory guard: available RAM low or swap increased by >2 GiB with <1 GiB available",
+      "system_memory": {
+        "available_start_bytes": 9276751872,
+        "min_available_bytes": 558415872,
+        "swap_start_bytes": 6681133056,
+        "max_swap_bytes": 10187767808
+      }
+    }
+  ]
+}

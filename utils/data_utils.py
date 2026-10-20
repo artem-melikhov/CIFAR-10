@@ -1,7 +1,7 @@
 
 import torch
 from PIL import Image
-from torchvision.transforms import ToTensor, v2
+from torchvision.transforms import PILToTensor, v2
 import os
 import pandas as pd
 from torch.utils.data import Dataset, TensorDataset, DataLoader, random_split
@@ -24,20 +24,15 @@ class AutoAugumentationDataset(Dataset):
     def __getitem__(self, index: int) -> tuple[torch.Tensor, torch.Tensor]:
         image, label = self.dataset[index]
 
-        # AutoAugment ожидает тензор uint8 со значениями от 0 до 255.
-        image = (image * 255).round().to(torch.uint8)
-        image = self.augment(image)
-
-        # Возвращаем формат float32 со значениями от 0 до 1, как после ToTensor().
-        image = image.to(torch.float32) / 255
-        return image, label
+        # Загрузчик и AutoAugment работают с uint8 [0, 255].
+        return self.augment(image), label
 
 
 def calculate_mean_std(ds_train: Subset) -> tuple[torch.Tensor, torch.Tensor]:
-    """Считает среднее и стандартное отклонение по обучающим картинкам."""
+    """Считает mean и std исходного uint8 train в шкале 0–255."""
 
     # берём только train, чтобы картинки из val не влияли на статистики
-    X_train = ds_train.dataset.tensors[0][ds_train.indices]
+    X_train = ds_train.dataset.tensors[0][ds_train.indices].float()
 
     mean = X_train.mean(dim=(0, 2, 3))
     std = X_train.std(dim=(0, 2, 3), correction=0)
@@ -62,18 +57,20 @@ class StandardizationDataset(Dataset):
 
         if isinstance(data, tuple):
             image, label = data
-            return (image - self.mean) / self.std, label
+            return (image.float() - self.mean) / self.std, label
 
-        return (data - self.mean) / self.std
+        return (data.float() - self.mean) / self.std
 
 
 class TestImagesDataset(Dataset):
     """Подгружает тестовые картинки в порядке sampleSubmission.csv."""
 
-    def __init__(self, images_path: str, sample_path: str, channels: int = 3):
+    def __init__(
+        self, images_path: str, sample_path: str, channels: int = 3,
+    ):
         self.images_path = images_path
         self.ids = pd.read_csv(sample_path)["id"].tolist()
-        self.to_tensor = ToTensor()
+        self.to_tensor = PILToTensor()
         self.mode = "RGB" if channels == 3 else "L"
 
     def __len__(self) -> int:
@@ -93,13 +90,14 @@ def images_to_tensor(
     channels: int = 3,
     has_labels: bool = True,
 ) -> torch.Tensor | tuple[torch.Tensor, torch.Tensor]:
+    """Загружает изображения в RAM как uint8 [0, 255]."""
 
     # читаем метки правильных классов для фото они сопоставлены с ними по image_id, 
     # который указан в названии файла картинки(для случая когда эти метки есть, то есть train), 
     # иначе читаем id которые идут в файле sample_submission, 
     # чтобы дать предсказания для картинок в том же порядке
     df = pd.read_csv(csv_path)
-    to_tensor = ToTensor()
+    to_tensor = PILToTensor()
     img_tensors = []
 
     for image_id in df["id"]:
@@ -133,7 +131,21 @@ def train_dataset_split(ds_train: TensorDataset, train_size: float, random_seed:
     ds_train, ds_test = random_split(ds_train, [train_size, test_size], generator=g)
     return ds_train, ds_test
 
-def create_dataloader(ds: Dataset, batch_size: int = 128, shuffle: bool = False, random_seed: int = 52) -> DataLoader:
+def create_dataloader(
+    ds: Dataset,
+    batch_size: int = 128,
+    shuffle: bool = False,
+    random_seed: int = 52,
+    num_workers: int = 0,
+) -> DataLoader:
+    """При num_workers > 0 готовит батчи в постоянных процессах на CPU."""
     g = torch.Generator().manual_seed(random_seed) # фиксируем рандом для shuffle
-    dl = DataLoader(ds, batch_size=batch_size, shuffle=shuffle, generator=g)
-    return dl
+    return DataLoader(
+        ds,
+        batch_size=batch_size,
+        shuffle=shuffle,
+        generator=g,
+        num_workers=num_workers,
+        persistent_workers=num_workers > 0,
+        prefetch_factor=2 if num_workers > 0 else None,
+    )

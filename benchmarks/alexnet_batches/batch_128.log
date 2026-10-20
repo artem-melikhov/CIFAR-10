@@ -1,0 +1,5 @@
+READY 128 setup_s 6.562208291994466
+EPOCH 128 warmup {"epoch": 0, "train_seconds": 50.1947600420026, "val_seconds": 3.484350540995365, "total_seconds": 53.679110582997964, "train_images_per_second": 796.8959303028503, "max_observed_driver_bytes": 1347518464, "max_observed_tensor_bytes": 578682880}
+EPOCH 128 1 {"epoch": 1, "train_seconds": 47.163189291997696, "val_seconds": 3.4218643339991104, "total_seconds": 50.58505362599681, "train_images_per_second": 848.1190648993473, "max_observed_driver_bytes": 2486272000, "max_observed_tensor_bytes": 578027520}
+EPOCH 128 2 {"epoch": 2, "train_seconds": 46.21573708300275, "val_seconds": 3.438966834000894, "total_seconds": 49.654703917003644, "train_images_per_second": 865.5060489062549, "max_observed_driver_bytes": 2467397632, "max_observed_tensor_bytes": 578027520}
+EPOCH 128 3 {"epoch": 3, "train_seconds": 46.6545616250005, "val_seconds": 3.8348794170015026, "total_seconds": 50.489441042002, "train_images_per_second": 857.3652523307697, "max_observed_driver_bytes": 2429648896, "max_observed_tensor_bytes": 578027520}

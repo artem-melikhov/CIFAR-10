@@ -1,0 +1,20 @@
+{
+  "case": "combined",
+  "label": "combined",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": "1",
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 1.5041525000051479,
+  "status": "complete",
+  "block_step_seconds": [
+    0.20344601562555908,
+    0.20342912500018429,
+    0.20345251562503108
+  ],
+  "median_step_seconds": 0.20344601562555908,
+  "final_loss": 0.030504584312438965,
+  "driver_bytes": 1269596160,
+  "total_seconds": 6.387221875003888
+}

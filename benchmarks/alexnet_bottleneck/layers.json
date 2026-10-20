@@ -1,0 +1,297 @@
+{
+  "case": "layers",
+  "batch_size": 256,
+  "median_step_seconds": 0.3036899170037941,
+  "steps_seconds": [
+    0.3040161250028177,
+    0.3036899170037941,
+    0.30166041600023163,
+    0.3010972080010106,
+    0.3037839160024305,
+    0.30443895800272003,
+    0.3035464580025291
+  ],
+  "phases": [
+    {
+      "forward_loss_seconds": 0.09022345799894538,
+      "backward_seconds": 0.20928270799777238,
+      "adam_seconds": 0.004509292004513554
+    },
+    {
+      "forward_loss_seconds": 0.0910474999982398,
+      "backward_seconds": 0.2080619169937563,
+      "adam_seconds": 0.004579750006087124
+    },
+    {
+      "forward_loss_seconds": 0.09085387500090292,
+      "backward_seconds": 0.20639866699639242,
+      "adam_seconds": 0.004407208994962275
+    },
+    {
+      "forward_loss_seconds": 0.08999404199857963,
+      "backward_seconds": 0.2066160000031232,
+      "adam_seconds": 0.004486249999899883
+    },
+    {
+      "forward_loss_seconds": 0.09117879100085702,
+      "backward_seconds": 0.20805608400405617,
+      "adam_seconds": 0.004548166994936764
+    },
+    {
+      "forward_loss_seconds": 0.0920451670026523,
+      "backward_seconds": 0.20790183400094975,
+      "adam_seconds": 0.004491332998441067
+    },
+    {
+      "forward_loss_seconds": 0.09073812499991618,
+      "backward_seconds": 0.20805291600117926,
+      "adam_seconds": 0.004754540997964796
+    }
+  ],
+  "median_phases": {
+    "forward_loss_seconds": 0.09085387500090292,
+    "backward_seconds": 0.20805291600117926,
+    "adam_seconds": 0.004509292004513554
+  },
+  "driver_bytes": 2479734784,
+  "tensor_bytes": 104071936,
+  "layers": [
+    {
+      "name": "00:Conv2d",
+      "shape": [
+        256,
+        96,
+        32,
+        32
+      ],
+      "forward_ms": 1.765999993949663,
+      "backward_ms": 12.083832996722776
+    },
+    {
+      "name": "01:ReLU",
+      "shape": [
+        256,
+        96,
+        32,
+        32
+      ],
+      "forward_ms": 1.3707920006709173,
+      "backward_ms": 2.119709002727177
+    },
+    {
+      "name": "02:LocalResponseNorm",
+      "shape": [
+        256,
+        96,
+        32,
+        32
+      ],
+      "forward_ms": 17.120249998697545,
+      "backward_ms": 33.40441599721089
+    },
+    {
+      "name": "03:MaxPool2d",
+      "shape": [
+        256,
+        96,
+        16,
+        16
+      ],
+      "forward_ms": 4.612249998899642,
+      "backward_ms": 4.5479170003090985
+    },
+    {
+      "name": "04:Conv2d",
+      "shape": [
+        256,
+        256,
+        16,
+        16
+      ],
+      "forward_ms": 24.86829099507304,
+      "backward_ms": 65.49566600006074
+    },
+    {
+      "name": "05:ReLU",
+      "shape": [
+        256,
+        256,
+        16,
+        16
+      ],
+      "forward_ms": 1.0399590028100647,
+      "backward_ms": 1.5216669999063015
+    },
+    {
+      "name": "06:LocalResponseNorm",
+      "shape": [
+        256,
+        256,
+        16,
+        16
+      ],
+      "forward_ms": 11.753291997592896,
+      "backward_ms": 21.4574170022388
+    },
+    {
+      "name": "07:MaxPool2d",
+      "shape": [
+        256,
+        256,
+        8,
+        8
+      ],
+      "forward_ms": 2.9531670006690547,
+      "backward_ms": 4.191291001916397
+    },
+    {
+      "name": "08:Conv2d",
+      "shape": [
+        256,
+        384,
+        8,
+        8
+      ],
+      "forward_ms": 5.645666002237704,
+      "backward_ms": 16.432208998594433
+    },
+    {
+      "name": "09:ReLU",
+      "shape": [
+        256,
+        384,
+        8,
+        8
+      ],
+      "forward_ms": 0.5194580007810146,
+      "backward_ms": 0.7332919994951226
+    },
+    {
+      "name": "10:Conv2d",
+      "shape": [
+        256,
+        384,
+        8,
+        8
+      ],
+      "forward_ms": 8.139917001244612,
+      "backward_ms": 23.11475000169594
+    },
+    {
+      "name": "11:ReLU",
+      "shape": [
+        256,
+        384,
+        8,
+        8
+      ],
+      "forward_ms": 0.5477500017150305,
+      "backward_ms": 0.8009589946595952
+    },
+    {
+      "name": "12:Conv2d",
+      "shape": [
+        256,
+        256,
+        8,
+        8
+      ],
+      "forward_ms": 5.6618330054334365,
+      "backward_ms": 16.482208004163112
+    },
+    {
+      "name": "13:ReLU",
+      "shape": [
+        256,
+        256,
+        8,
+        8
+      ],
+      "forward_ms": 0.44191600318299606,
+      "backward_ms": 0.553457997739315
+    },
+    {
+      "name": "14:MaxPool2d",
+      "shape": [
+        256,
+        256,
+        4,
+        4
+      ],
+      "forward_ms": 0.8355829995707609,
+      "backward_ms": 1.2922919995617121
+    },
+    {
+      "name": "15:Flatten",
+      "shape": [
+        256,
+        4096
+      ],
+      "forward_ms": 0.017625003238208592,
+      "backward_ms": 0.008875002095010132
+    },
+    {
+      "name": "16:Linear",
+      "shape": [
+        256,
+        512
+      ],
+      "forward_ms": 0.6443750025937334,
+      "backward_ms": 0.8537500034435652
+    },
+    {
+      "name": "17:ReLU",
+      "shape": [
+        256,
+        512
+      ],
+      "forward_ms": 0.23270800011232495,
+      "backward_ms": 0.2519170011510141
+    },
+    {
+      "name": "18:Dropout",
+      "shape": [
+        256,
+        512
+      ],
+      "forward_ms": 0.29237499984446913,
+      "backward_ms": 0.23041600070428103
+    },
+    {
+      "name": "19:Linear",
+      "shape": [
+        256,
+        256
+      ],
+      "forward_ms": 0.30404199787881225,
+      "backward_ms": 0.359792000381276
+    },
+    {
+      "name": "20:ReLU",
+      "shape": [
+        256,
+        256
+      ],
+      "forward_ms": 0.20450000010896474,
+      "backward_ms": 0.2564169990364462
+    },
+    {
+      "name": "21:Dropout",
+      "shape": [
+        256,
+        256
+      ],
+      "forward_ms": 0.24658300390001386,
+      "backward_ms": 0.22904099751031026
+    },
+    {
+      "name": "22:Linear",
+      "shape": [
+        256,
+        10
+      ],
+      "forward_ms": 0.26287500077160075,
+      "backward_ms": 0.3643750023911707
+    }
+  ]
+}

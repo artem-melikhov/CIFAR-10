@@ -1,0 +1,135 @@
+Traceback (most recent call last):
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/benchmarks/alexnet_deep_sweep.py", line 79, in main
+    for _ in range(4):step();torch.mps.synchronize()
+                      ~~~~^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/benchmarks/alexnet_deep_sweep.py", line 74, in step
+    logits=model(x);loss=F.cross_entropy(logits,y)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 563, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1261, in compile_wrapper
+    result = fn(*args, **kwargs)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "AlexNet.ipynb:model", line 71, in forward
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/benchmarks/alexnet_deep_sweep.py", line 34, in forward
+    def forward(self,x):return super().forward(x.float())
+                               ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/benchmarks/alexnet_metal_lrn.py", line 82, in forward
+    return _FusedLRN.apply(x,self.size,self.alpha,self.beta,self.k)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/benchmarks/alexnet_metal_lrn.py", line 62, in forward
+    library().lrn_forward(x, y, r, rs, c, spatial, alpha/size, beta, k, size//2,
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 2649, in __call__
+    result = self._torchdynamo_orig_backend(
+        frame, cache_entry, self.hooks, frame_state, skip=1
+    )
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 2333, in __call__
+    result = self._inner_convert(
+        frame, cache_entry, hooks, frame_state, skip=skip + 1
+    )
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 778, in __call__
+    result = _compile(
+        frame.f_code,
+    ...<18 lines>...
+        convert_frame_box=self._box,
+    )
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 2182, in _compile
+    raise InternalTorchDynamoError(
+        f"{type(e).__qualname__}: {str(e)}"
+    ).with_traceback(e.__traceback__) from None
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 2116, in _compile
+    guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+                                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_utils_internal.py", line 114, in wrapper_function
+    return function(*args, **kwargs)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 1701, in compile_inner
+    result = _compile_inner(code, one_graph, hooks)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 1761, in _compile_inner
+    dynamo_output = compile_frame(
+        code,
+    ...<11 lines>...
+        package=package,
+    )
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 1598, in compile_frame
+    bytecode, tracer_output = transform_code_object(code, transform)
+                              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/bytecode_transformation.py", line 1843, in transform_code_object
+    tracer_output = transformations(instructions, code_options)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 1569, in transform
+    tracer_output = trace_frame(
+        code,
+    ...<14 lines>...
+        package=package,
+    )
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 369, in _fn
+    return fn(*args, **kwargs)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 968, in trace_frame
+    run_tracer()
+    ~~~~~~~~~~^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py", line 949, in run_tracer
+    tracer.run()
+    ~~~~~~~~~~^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/symbolic_convert.py", line 2094, in run
+    while self.step():
+          ~~~~~~~~~^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/symbolic_convert.py", line 1747, in step
+    self.dispatch_table[inst.opcode](self, inst)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/symbolic_convert.py", line 3367, in LOAD_ATTR
+    self._load_attr(inst.argval)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/symbolic_convert.py", line 3350, in _load_attr
+    result = generic_getattr(self, obj, attr)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/variables/object_protocol.py", line 2307, in generic_getattr
+    return obj.tp_getattro_impl(tx, name)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/variables/user_defined.py", line 3469, in tp_getattro_impl
+    return self.generic_getattr(tx, name)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/variables/user_defined.py", line 3397, in generic_getattr
+    result = self.lookup_instance_dict(tx, name)
+  File "/Users/matvej-melikhov/Documents/CIFAR-10/.venv/lib/python3.13/site-packages/torch/_dynamo/variables/user_defined.py", line 3694, in lookup_instance_dict
+    if hasattr(self.value, "__dict__") and name in self.value.__dict__:
+       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+torch._dynamo.exc.InternalTorchDynamoError: RuntimeError: Failed to create function state object for: __dict__
+
+from user code:
+   File "/Users/matvej-melikhov/Documents/CIFAR-10/benchmarks/alexnet_metal_lrn.py", line 62, in torch_dynamo_resume_in_forward_at_62
+    library().lrn_forward(x, y, r, rs, c, spatial, alpha/size, beta, k, size//2,
+    ^^^^^^^^^^^^^^^^^^^^^
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+{
+  "case": "compile_metal",
+  "label": "compile_metal",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "status": "error",
+  "error": "InternalTorchDynamoError('RuntimeError: Failed to create function state object for: __dict__\\n\\nfrom user code:\\n   File \"/Users/matvej-melikhov/Documents/CIFAR-10/benchmarks/alexnet_metal_lrn.py\", line 62, in torch_dynamo_resume_in_forward_at_62\\n    library().lrn_forward(x, y, r, rs, c, spatial, alpha/size, beta, k, size//2,\\n    ^^^^^^^^^^^^^^^^^^^^^\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n')",
+  "total_seconds": 1.9170145000025514
+}

@@ -1,0 +1,12 @@
+{
+  "case": "compile_metal",
+  "label": "compile_metal",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "status": "error",
+  "error": "InternalTorchDynamoError('RuntimeError: Failed to create function state object for: __dict__\\n\\nfrom user code:\\n   File \"/Users/matvej-melikhov/Documents/CIFAR-10/benchmarks/alexnet_metal_lrn.py\", line 62, in torch_dynamo_resume_in_forward_at_62\\n    library().lrn_forward(x, y, r, rs, c, spatial, alpha/size, beta, k, size//2,\\n    ^^^^^^^^^^^^^^^^^^^^^\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n')",
+  "total_seconds": 1.9170145000025514
+}

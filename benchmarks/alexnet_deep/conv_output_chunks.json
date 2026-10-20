@@ -1,0 +1,20 @@
+{
+  "case": "conv_output_chunks",
+  "label": "conv_output_chunks",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 2.226859707996482,
+  "status": "complete",
+  "block_step_seconds": [
+    0.39204640112529887,
+    0.3918580103754721,
+    0.3913517291248354
+  ],
+  "median_step_seconds": 0.3918580103754721,
+  "final_loss": 0.03041934408247471,
+  "driver_bytes": 2360115200,
+  "total_seconds": 11.62913637499878
+}

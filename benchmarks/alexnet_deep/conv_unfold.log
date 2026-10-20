@@ -1,0 +1,20 @@
+{
+  "case": "conv_unfold",
+  "label": "conv_unfold",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 2.3557482920004986,
+  "status": "complete",
+  "block_step_seconds": [
+    0.41165059374998236,
+    0.4117464011251286,
+    0.41322987500007
+  ],
+  "median_step_seconds": 0.4117464011251286,
+  "final_loss": 0.029985003173351288,
+  "driver_bytes": 2670460928,
+  "total_seconds": 12.249025625002105
+}

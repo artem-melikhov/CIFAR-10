@@ -1,0 +1,20 @@
+{
+  "case": "inplace",
+  "label": "inplace",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 1.4991311670019059,
+  "status": "complete",
+  "block_step_seconds": [
+    0.21411369799989188,
+    0.21444330199938122,
+    0.21425970312429854
+  ],
+  "median_step_seconds": 0.21425970312429854,
+  "final_loss": 0.030284956097602844,
+  "driver_bytes": 1345093632,
+  "total_seconds": 6.641902833005588
+}

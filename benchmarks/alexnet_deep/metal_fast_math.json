@@ -1,0 +1,20 @@
+{
+  "case": "metal",
+  "label": "metal_fast_math",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": "1",
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 1.5420694170024944,
+  "status": "complete",
+  "block_step_seconds": [
+    0.21162345837456087,
+    0.2114088281250588,
+    0.21196861462431116
+  ],
+  "median_step_seconds": 0.21162345837456087,
+  "final_loss": 0.03020358271896839,
+  "driver_bytes": 1345093632,
+  "total_seconds": 6.622273583001515
+}

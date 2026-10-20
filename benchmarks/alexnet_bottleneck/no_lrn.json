@@ -1,0 +1,58 @@
+{
+  "case": "no_lrn",
+  "batch_size": 256,
+  "median_step_seconds": 0.20391929199831793,
+  "steps_seconds": [
+    0.20382629199593794,
+    0.20391929199831793,
+    0.20469270899775438,
+    0.20380145799572347,
+    0.2043275000032736,
+    0.20416862500132993,
+    0.20379358300124295
+  ],
+  "phases": [
+    {
+      "forward_loss_seconds": 0.05546841699833749,
+      "backward_seconds": 0.14360799999849405,
+      "adam_seconds": 0.0047487080009886995
+    },
+    {
+      "forward_loss_seconds": 0.0554621249975753,
+      "backward_seconds": 0.14389841600495856,
+      "adam_seconds": 0.004558125001494773
+    },
+    {
+      "forward_loss_seconds": 0.056325917001231574,
+      "backward_seconds": 0.143735083998763,
+      "adam_seconds": 0.00463016600406263
+    },
+    {
+      "forward_loss_seconds": 0.055693915994197596,
+      "backward_seconds": 0.14348770800279453,
+      "adam_seconds": 0.004619332998117898
+    },
+    {
+      "forward_loss_seconds": 0.05576025000482332,
+      "backward_seconds": 0.14412874999834457,
+      "adam_seconds": 0.004437625000718981
+    },
+    {
+      "forward_loss_seconds": 0.05589687500469154,
+      "backward_seconds": 0.1436742080040858,
+      "adam_seconds": 0.004596958999172784
+    },
+    {
+      "forward_loss_seconds": 0.055710458000248764,
+      "backward_seconds": 0.14366395799879683,
+      "adam_seconds": 0.004418332995555829
+    }
+  ],
+  "median_phases": {
+    "forward_loss_seconds": 0.055710458000248764,
+    "backward_seconds": 0.1436742080040858,
+    "adam_seconds": 0.004596958999172784
+  },
+  "driver_bytes": 1244430336,
+  "tensor_bytes": 100795136
+}

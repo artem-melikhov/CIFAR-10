@@ -1,0 +1,20 @@
+{
+  "case": "async",
+  "label": "async",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 1.4840696660030517,
+  "status": "complete",
+  "block_step_seconds": [
+    0.21274588025062258,
+    0.21289305724985752,
+    0.2130546457501623
+  ],
+  "median_step_seconds": 0.21289305724985752,
+  "final_loss": 0.030284956097602844,
+  "driver_bytes": 1345093632,
+  "total_seconds": 6.594036833004793
+}

@@ -1,0 +1,20 @@
+{
+  "case": "winograd",
+  "label": "winograd",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 5.698290042004373,
+  "status": "complete",
+  "block_step_seconds": [
+    1.064748546874398,
+    1.0664579115000379,
+    1.06735794787528
+  ],
+  "median_step_seconds": 1.0664579115000379,
+  "final_loss": 0.03004595823585987,
+  "driver_bytes": 4113334272,
+  "total_seconds": 31.287043500000436
+}

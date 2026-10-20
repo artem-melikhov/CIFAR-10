@@ -1,0 +1,20 @@
+{
+  "case": "fused_adam",
+  "label": "fused_adam",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 1.4892809579978348,
+  "status": "complete",
+  "block_step_seconds": [
+    0.21204301037505502,
+    0.21193687499999214,
+    0.2118899582501399
+  ],
+  "median_step_seconds": 0.21193687499999214,
+  "final_loss": 0.030286557972431183,
+  "driver_bytes": 1269596160,
+  "total_seconds": 6.576479333001771
+}

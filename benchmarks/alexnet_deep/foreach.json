@@ -1,0 +1,20 @@
+{
+  "case": "foreach",
+  "label": "foreach",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 1.4895567920029862,
+  "status": "complete",
+  "block_step_seconds": [
+    0.21436919275038235,
+    0.21468968224962737,
+    0.21430999474978307
+  ],
+  "median_step_seconds": 0.21436919275038235,
+  "final_loss": 0.030284956097602844,
+  "driver_bytes": 1311539200,
+  "total_seconds": 6.6367353750029
+}

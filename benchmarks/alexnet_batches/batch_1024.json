@@ -1,0 +1,23 @@
+{
+  "batch_size": 1024,
+  "status": "memory_guard_abort",
+  "epochs": [],
+  "torch": "2.14.1",
+  "torchvision": "0.29.1",
+  "workers": 4,
+  "seed": 52,
+  "repeats": 3,
+  "device": "mps",
+  "train_images": 40000,
+  "val_images": 10000,
+  "setup_seconds": 6.2654865000004065,
+  "train_steps": 40,
+  "val_steps": 10,
+  "error": "system memory guard: available RAM low or swap increased by >2 GiB with <1 GiB available",
+  "system_memory": {
+    "available_start_bytes": 9276751872,
+    "min_available_bytes": 558415872,
+    "swap_start_bytes": 6681133056,
+    "max_swap_bytes": 10187767808
+  }
+}

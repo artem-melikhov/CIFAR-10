@@ -1,0 +1,20 @@
+{
+  "case": "compile_metal_disabled",
+  "label": "compile_metal_disabled",
+  "batch": 256,
+  "env": {
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null
+  },
+  "setup_warmup_seconds": 2.1179299159994116,
+  "status": "complete",
+  "block_step_seconds": [
+    0.2143251457491715,
+    0.21452763537490682,
+    0.21459925524959544
+  ],
+  "median_step_seconds": 0.21452763537490682,
+  "final_loss": 0.030284956097602844,
+  "driver_bytes": 1345093632,
+  "total_seconds": 7.265763124996738
+}
