@@ -35,9 +35,14 @@ def plot_training(
     plt.show()
     plt.close(fig)
 
-def train(model, optimizer, loss_func, dl_train, dl_val, path, device, EPOCH_COUNT=EPOCH_COUNT, plot=True, log_every=10):
+def train(
+    model, optimizer, loss_func, dl_train, dl_val, path, device,
+    EPOCH_COUNT=EPOCH_COUNT, plot=True, log_every=10, patience=50
+):
+
     best_val_accuracy = -1
     best_epoch = -1
+    epochs_without_improvement = 0
     hist_train_loss, hist_val_loss, hist_train_acc, hist_val_acc = [], [], [], []
 
     for epoch in range(1, EPOCH_COUNT+1):
@@ -86,9 +91,14 @@ def train(model, optimizer, loss_func, dl_train, dl_val, path, device, EPOCH_COU
         if val_acc > best_val_accuracy:
             best_val_accuracy = val_acc
             best_epoch = epoch
+            epochs_without_improvement = 0
             torch.save(model.state_dict(), path)
+        else:
+            epochs_without_improvement += 1
 
-        if epoch == 1 or epoch % log_every == 0 or epoch == EPOCH_COUNT:
+        stop_training = epochs_without_improvement >= patience
+
+        if epoch == 1 or epoch % log_every == 0 or epoch == EPOCH_COUNT or stop_training:
             # print(f'[epoch={epoch:3d}] train_loss={train_loss:.4f} val_loss={val_loss:.4f} train_acc={train_acc:.4f} val_acc={val_acc:.4f}')
             if plot:
                 plot_training(
@@ -99,6 +109,10 @@ def train(model, optimizer, loss_func, dl_train, dl_val, path, device, EPOCH_COU
                     best_epoch, 
                     live=True
                 )
+
+        if stop_training:
+            print(f"Ранняя остановка на эпохе {epoch}: val_acc не улучшалась {patience} эпох")
+            break
 
     print(f'Best epoch = {best_epoch}, best val_acc = {best_val_accuracy:.4f}')
 
