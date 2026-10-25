@@ -1,22 +1,24 @@
+from collections.abc import Callable
 
 import torch
 from PIL import Image
-from torchvision.transforms import PILToTensor, v2
+from torchvision.transforms import PILToTensor
 import os
 import pandas as pd
 from torch.utils.data import Dataset, TensorDataset, DataLoader, random_split
 from torch.utils.data import Subset
 
 
-class AutoAugumentationDataset(Dataset):
-    """Применяет AutoAugment для CIFAR-10 при каждой выдаче изображения.
-    При каждом обращении к изображению выбирается случайный вариант аугментации,
-    а метка класса остаётся прежней.
-    """
+class AugmentedDataset(Dataset):
+    """Применяет переданный transform к изображению, сохраняя его метку класса"""
 
-    def __init__(self, dataset: Dataset):
+    def __init__(
+        self,
+        dataset: Dataset,
+        transform: Callable[[torch.Tensor], torch.Tensor],
+    ):
         self.dataset = dataset
-        self.augment = v2.AutoAugment(policy=v2.AutoAugmentPolicy.CIFAR10)
+        self.transform = transform
 
     def __len__(self) -> int:
         return len(self.dataset)
@@ -24,15 +26,19 @@ class AutoAugumentationDataset(Dataset):
     def __getitem__(self, index: int) -> tuple[torch.Tensor, torch.Tensor]:
         image, label = self.dataset[index]
 
-        # Загрузчик и AutoAugment работают с uint8 [0, 255].
-        return self.augment(image), label
+        return self.transform(image), label
 
 
-def calculate_mean_std(ds_train: Subset) -> tuple[torch.Tensor, torch.Tensor]:
-    """Считает mean и std исходного uint8 train в шкале 0–255."""
+def calculate_mean_std(ds_train: TensorDataset | Subset) -> tuple[torch.Tensor, torch.Tensor]:
+    """Считает mean и std исходного uint8 train"""
 
-    # берём только train, чтобы картинки из val не влияли на статистики
-    X_train = ds_train.dataset.tensors[0][ds_train.indices].float()
+    if isinstance(ds_train, Subset):
+        # берём только выбранные изображения, без картинок из val
+        X_train = ds_train.dataset.tensors[0][ds_train.indices]
+    else:
+        X_train = ds_train.tensors[0]
+
+    X_train = X_train.float()
 
     mean = X_train.mean(dim=(0, 2, 3))
     std = X_train.std(dim=(0, 2, 3), correction=0)
@@ -40,26 +46,17 @@ def calculate_mean_std(ds_train: Subset) -> tuple[torch.Tensor, torch.Tensor]:
     return mean, std
 
 
-class StandardizationDataset(Dataset):
-    """Стандартизует картинки по mean и std обучающей выборки."""
+def standardize_batch(
+    images: torch.Tensor,
+    *,
+    mean: torch.Tensor,
+    std: torch.Tensor,
+) -> torch.Tensor:
+    """Стандартизует uint8-батч [B, C, H, W] статистиками в шкале 0–255.
 
-    def __init__(self, dataset: Dataset, mean: torch.Tensor, std: torch.Tensor):
-        self.dataset = dataset
-        # добавляем размеры высоты и ширины, чтобы значения применились к каждому каналу
-        self.mean = mean.reshape(-1, 1, 1)
-        self.std = std.reshape(-1, 1, 1)
-
-    def __len__(self) -> int:
-        return len(self.dataset)
-
-    def __getitem__(self, index: int):
-        data = self.dataset[index]
-
-        if isinstance(data, tuple):
-            image, label = data
-            return (image.float() - self.mean) / self.std, label
-
-        return (data.float() - self.mean) / self.std
+    mean и std должны находиться на том же устройстве, что и images.
+    """
+    return (images.float() - mean.reshape(1, -1, 1, 1)) / std.reshape(1, -1, 1, 1)
 
 
 class TestImagesDataset(Dataset):

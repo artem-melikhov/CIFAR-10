@@ -1,0 +1,13 @@
+# Training and data processing
+torch==2.14.1
+torchvision==0.29.1
+numpy==2.5.3
+pandas==3.0.6
+Pillow==12.1.1
+matplotlib==3.11.2
+aim==3.29.1
+
+# Notebooks
+jupyterlab==4.5.6
+ipykernel==7.2.0
+

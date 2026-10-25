@@ -1,5 +1,33 @@
-.DS_Store
-models/
+# Данные, веса и локальная база Aim
 data/
+models/
+.aim/
+
+# Окружения и локальные переменные
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Кэши Python и Jupyter
 __pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cache/
+
+# Локальные настройки редакторов и системные файлы
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Временные файлы результатов и логи
+results.tmp.csv
+*.log
 

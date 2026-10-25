@@ -1,4 +1,0 @@
-INITIAL original_full {'accuracy': 0.7761, 'loss': 0.6704727144241333, 'seconds': 3.4910997079932713}
-EPOCH original_full {'epoch': 1, 'train_seconds': 114.92413820799993, 'images_per_second': 348.0556880714166, 'train_loss': 0.7746628343582154, 'train_accuracy': 0.7369, 'peak_driver_bytes': 2639167488, 'validation': {'accuracy': 0.7872, 'loss': 0.6152131677627564, 'seconds': 8.748312250005256}}
-/Users/matvej-melikhov/.local/share/uv/python/cpython-3.13.14-macos-aarch64-none/lib/python3.13/multiprocessing/resource_tracker.py:479: UserWarning: resource_tracker: There appear to be 20 leaked semaphore objects to clean up at shutdown: {'/mp-zprzsd_l', '/mp-me_lg59s', '/mp-4iarxi9v', '/mp-zj639fzr', '/mp-l6ue8uy4', '/mp-6aumeieq', '/mp-bwqop7qa', '/mp-hm2ik4jj', '/mp-tgoml_xu', '/mp-xcjdup0l', '/mp-rkb9knhq', '/mp-ui04t441', '/mp-f8sm2iqx', '/mp-tzlej_0f', '/mp-izb_f_8k', '/mp-ws07en12', '/mp-r4dzdhew', '/mp-8jgnhmup', '/mp-nq84f3v9', '/mp-458m4kjt'}
-  warnings.warn(

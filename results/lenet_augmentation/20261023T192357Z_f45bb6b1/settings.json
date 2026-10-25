@@ -1,0 +1,92 @@
+{
+  "series_id": "20261023T192357Z_f45bb6b1",
+  "seed": 52,
+  "split_seed": 52,
+  "dataloader_seed": 52,
+  "train_fraction": 0.8,
+  "architecture": "LeNet5",
+  "optimizer": "Adam",
+  "loss": "CrossEntropyLoss",
+  "batch_size": 512,
+  "num_workers": 4,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "epochs": 1000,
+  "patience": 50,
+  "log_every": 10,
+  "selection_metric": "max val_accuracy; first epoch on ties",
+  "crop_size": 32,
+  "crop_padding": 4,
+  "crop_padding_mode": "reflect",
+  "device": "mps",
+  "torch_version": "2.14.1",
+  "torchvision_version": "0.29.1",
+  "python_version": "3.12.10 (v3.12.10:0cc81280367, Apr  8 2025, 08:46:59) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "train_count": 40000,
+  "val_count": 10000,
+  "class_names": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "mean": [
+    125.4520263671875,
+    123.0703353881836,
+    113.9803237915039
+  ],
+  "std": [
+    63.0139045715332,
+    62.139427185058594,
+    66.77146911621094
+  ],
+  "train_labels_sha256": "eceab30f4fbf7617694fa195e5ef923a1e7e656740908c492a80ac763f137a00",
+  "source_sha256": {
+    "notebooks/LeNet_Augmentation_Experiments.ipynb": "b5f79fb11f6abac9c18a9a60a954dee9bb5a9cb0f22d50b2e40cdb663ac45903",
+    "utils/data_utils.py": "201f79952d2dad0e1aea9145118b316a756e24f55de9848ae34e94a62e62472d",
+    "utils/train_utils.py": "2ea2e680b58c08ad9753e0e107982d9f6292641b9598e4544d806d1dc633aea3"
+  },
+  "variants": [
+    {
+      "id": "A0",
+      "name": "Без аугментаций",
+      "crop_p": 0.0,
+      "flip_p": 0.0,
+      "autoaugment": false
+    },
+    {
+      "id": "A1",
+      "name": "Horizontal flip",
+      "crop_p": 0.0,
+      "flip_p": 0.5,
+      "autoaugment": false
+    },
+    {
+      "id": "A2",
+      "name": "Crop",
+      "crop_p": 0.5,
+      "flip_p": 0.0,
+      "autoaugment": false
+    },
+    {
+      "id": "A3",
+      "name": "Crop + flip",
+      "crop_p": 0.5,
+      "flip_p": 0.5,
+      "autoaugment": false
+    },
+    {
+      "id": "A4",
+      "name": "AutoAugment CIFAR10",
+      "crop_p": 0.0,
+      "flip_p": 0.0,
+      "autoaugment": true
+    }
+  ]
+}
