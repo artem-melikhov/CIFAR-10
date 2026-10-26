@@ -23,7 +23,7 @@ from utils.train_utils import train
 
 
 class LeNet5(nn.Module):
-    """Архитектура из LeNet.ipynb для RGB-изображений 32×32 и 10 классов."""
+    """Архитектура из LeNet.ipynb для RGB-изображений 32×32 и 10 классов"""
 
     def __init__(self):
         super().__init__()
@@ -47,7 +47,7 @@ class LeNet5(nn.Module):
 
 
 def _weights_path(directory: Path, name: str, epochs: int) -> Path:
-    """Понятное имя весов; повторы получают суффиксы _2, _3 и далее."""
+    """повторы имён для весов получают суффиксы _2, _3 и далее."""
     name = name.replace("Без аугментаций", "no_augmentation")
     name = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_") or "experiment"
     stem = f"lenet_{name}_{epochs}epochs"
@@ -121,7 +121,7 @@ def cumulative_combinations(ranked: list[str], catalog: dict) -> dict:
 
 
 class _TrainingLog:
-    """Передаёт метрики в Aim и сохраняет кривую для сравнения коротких запусков."""
+    """Передаёт метрики в Aim и сохраняет кривую для сравнения коротких запусков"""
 
     def __init__(self, run, epochs: int):
         self.run, self.epochs = run, epochs
@@ -219,9 +219,9 @@ def run_lenet_experiment(
 ) -> pd.DataFrame:
     """Обучает новую модель, сохраняет лучший checkpoint и дописывает results.csv.
 
-    ds_train содержит uint8 без стандартизации; ds_val уже стандартизирован.
+    ds_train содержит uint8 без стандартизации. ds_val уже стандартизирован.
     Повтор опыта сохраняет новый run и новые веса, оставляя прежние результаты.
-    При patience=None обучаем ровно epochs эпох; каждый запуск начинается заново.
+    При patience=None обучаем ровно epochs эпох. Каждый запуск начинается заново
     """
     if epochs < 1 or len(ds_train) == 0 or len(ds_val) == 0:
         raise ValueError("Нужны непустые train/val и хотя бы одна эпоха обучения")
