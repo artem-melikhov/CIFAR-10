@@ -2,6 +2,7 @@
 data/
 models/
 .aim/
+results/lenet_augmentation/
 
 # Окружения и локальные переменные
 .venv/
