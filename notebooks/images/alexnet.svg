@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="910" height="1236" viewBox="0 0 910 1236" role="img" aria-label="AlexNet: вертикальная архитектура для входа 32×32">
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#111"/></marker>
+    <style>
+      text { font-family: 'DejaVu Sans', Arial, sans-serif; fill: #111; }
+      .title { font-size: 18px; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#fff"/>
+  <g transform="translate(30 26)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Input RGB: 3 × 32 × 32</text>
+    </g>
+<path d="M455 72V81" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 86)">
+      <rect width="850" height="44" fill="#8cf1f4" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Conv2d: kernel_size=3×3, stride=1, padding=1 → 96 × 32 × 32</text>
+    </g>
+<path d="M455 132V141" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 146)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">ReLU → LRN(size=5)</text>
+    </g>
+<path d="M455 192V201" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 206)">
+      <rect width="850" height="44" fill="#efc9f2" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">MaxPool2d: kernel_size=3×3, stride=2, padding=1 → 96 × 16 × 16</text>
+    </g>
+<path d="M455 252V261" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 266)">
+      <rect width="850" height="44" fill="#8cf1f4" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Conv2d: kernel_size=5×5, stride=1, padding=2 → 256 × 16 × 16</text>
+    </g>
+<path d="M455 312V321" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 326)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">ReLU → LRN(size=5)</text>
+    </g>
+<path d="M455 372V381" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 386)">
+      <rect width="850" height="44" fill="#efc9f2" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">MaxPool2d: kernel_size=3×3, stride=2, padding=1 → 256 × 8 × 8</text>
+    </g>
+<path d="M455 432V441" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 446)">
+      <rect width="850" height="44" fill="#8cf1f4" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Conv2d: kernel_size=3×3, stride=1, padding=1 → 384 × 8 × 8</text>
+    </g>
+<path d="M455 492V501" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 506)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">ReLU</text>
+    </g>
+<path d="M455 552V561" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 566)">
+      <rect width="850" height="44" fill="#8cf1f4" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Conv2d: kernel_size=3×3, stride=1, padding=1 → 384 × 8 × 8</text>
+    </g>
+<path d="M455 612V621" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 626)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">ReLU</text>
+    </g>
+<path d="M455 672V681" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 686)">
+      <rect width="850" height="44" fill="#8cf1f4" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Conv2d: kernel_size=3×3, stride=1, padding=1 → 256 × 8 × 8</text>
+    </g>
+<path d="M455 732V741" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 746)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">ReLU</text>
+    </g>
+<path d="M455 792V801" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 806)">
+      <rect width="850" height="44" fill="#efc9f2" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">MaxPool2d: kernel_size=3×3, stride=2, padding=1 → 256 × 4 × 4</text>
+    </g>
+<path d="M455 852V861" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 866)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Flatten: 256 × 4 × 4 → 4096</text>
+    </g>
+<path d="M455 912V921" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 926)">
+      <rect width="850" height="44" fill="#fff07a" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Linear: 4096 → 512</text>
+    </g>
+<path d="M455 972V981" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 986)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">ReLU → Dropout(p=0.5)</text>
+    </g>
+<path d="M455 1032V1041" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 1046)">
+      <rect width="850" height="44" fill="#fff07a" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Linear: 512 → 256</text>
+    </g>
+<path d="M455 1092V1101" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 1106)">
+      <rect width="850" height="44" fill="#f3f3f3" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">ReLU → Dropout(p=0.5)</text>
+    </g>
+<path d="M455 1152V1161" fill="none" stroke="#111" stroke-width="1.7" marker-end="url(#arrow)"/>
+<g transform="translate(30 1166)">
+      <rect width="850" height="44" fill="#fff07a" stroke="#111" stroke-width="1.5"/>
+      <text x="425" y="28" text-anchor="middle" class="title">Linear: 256 → 10</text>
+    </g>
+</svg>
